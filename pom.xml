@@ -137,6 +137,7 @@
 				<version>2.22.0</version>
 				<configuration>
 					<groups>integration</groups>
+					<forkCount>1</forkCount>
 				</configuration>
 				<executions>
 					<execution>
