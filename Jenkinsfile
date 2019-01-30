@@ -13,7 +13,7 @@ pipeline {
       }
     }
 
-  // Container, reuse checkout + save env
+    // Container, reuse checkout + save env
     stage('Compile + Unit Test') {
       steps {
         sh 'mvn package'
@@ -21,7 +21,9 @@ pipeline {
     }
 
     stage('Integration Test') {
-      sh 'mvn verify' 
+      steps {
+        sh 'mvn verify' 
+      }
     }
 
     stage('Deploy') {
