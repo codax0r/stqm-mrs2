@@ -2,6 +2,7 @@ pipeline {
   agent any
   tools {
     maven 'apache-maven-3.6.0'
+    jdk 'openjdk-11'
   }
 
   // Container, save env
