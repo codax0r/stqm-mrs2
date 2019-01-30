@@ -14,13 +14,6 @@ pipeline {
   // Container, save env
   stages {
     stage('Checkout') {
-      //agent { // Das Ganze Docker zeugs geht auch pro stage
-      //  docker {
-      //    image 'maven:3-alpine'
-      //    args '-v $HOME/.m2:/root/.m2'
-      //  }
-      //}
-
       steps {
         checkout scm
         sh 'mvn clean'
@@ -29,6 +22,13 @@ pipeline {
 
     // Container, reuse checkout + save env
     stage('Compile + Unit Test') {
+      //agent { // Das Ganze Docker zeugs geht auch pro stage
+      //  docker {
+      //    image 'maven:3-alpine'
+      //    args '-v $HOME/.m2:/root/.m2'
+      //  }
+      //}
+
       steps {
         sh 'mvn package'
       }
